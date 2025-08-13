@@ -4,4 +4,4 @@ track_low_thresh: 0.1
 new_track_thresh: 0.35
 track_buffer: 50
 match_thresh: 0.75
-fuse_score: True  # This is the new line that resolves the error
+fuse_score: True  

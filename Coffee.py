@@ -11,8 +11,8 @@ mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(
     static_image_mode=False,
     max_num_hands=4,
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.5
+    min_detection_confidence=0.3,
+    min_tracking_confidence=0.3
 )
 mp_drawing = mp.solutions.drawing_utils
 
@@ -83,7 +83,7 @@ def detect_and_track_objects_yolo(frame, model):
         frame,
         persist=True,
         tracker="bytetrack_custom.yaml",
-        conf=0.6,
+        conf=0.7,
         iou=0.5,
         verbose=False
     )
@@ -298,7 +298,7 @@ def send_shutdown_signal(endpoint_url="http://127.0.0.1:4002/shutdown"):
 
 # --- Part 4: Main Function and Video Loop ---
 def main():
-    cap = cv2.VideoCapture("input1.mp4")  
+    cap = cv2.VideoCapture("input1.mp4")  # Change to name of ur video for webcam input
 
     if not cap.isOpened():
         print("Error: Could not open video stream.")
